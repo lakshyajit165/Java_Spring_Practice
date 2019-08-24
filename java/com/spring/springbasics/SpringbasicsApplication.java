@@ -4,8 +4,10 @@ import com.spring.springbasics.basic.BinarySearchImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan("com.spring.componentscan")
 public class SpringbasicsApplication {
 
 	// What are the beans?
