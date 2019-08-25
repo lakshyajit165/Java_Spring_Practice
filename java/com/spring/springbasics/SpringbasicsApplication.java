@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.spring.componentscan")
+
 public class SpringbasicsApplication {
 
 	// What are the beans?
