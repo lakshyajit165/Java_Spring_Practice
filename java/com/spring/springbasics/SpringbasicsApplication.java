@@ -23,11 +23,12 @@ public class SpringbasicsApplication {
 		// System.out.println(res);
 
 		// Application Context
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringbasicsApplication.class);
-		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
-		int res = binarySearch.binarySearch(new int[]{12, 4, 6}, 3);
+		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringbasicsApplication.class)) {
+			BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+			int res = binarySearch.binarySearch(new int[]{12, 4, 6}, 3);
 
-		System.out.println(res);
+			System.out.println(res);
+		}
 	}
 
 }
