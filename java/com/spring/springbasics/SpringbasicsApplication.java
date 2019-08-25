@@ -1,13 +1,15 @@
 package com.spring.springbasics;
 
 import com.spring.springbasics.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
-
+@Configuration
+@ComponentScan("com.spring.springbasics")
 public class SpringbasicsApplication {
 
 	// What are the beans?
@@ -21,8 +23,7 @@ public class SpringbasicsApplication {
 		// System.out.println(res);
 
 		// Application Context
-		ApplicationContext applicationContext = SpringApplication.run(SpringbasicsApplication.class, args);
-
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringbasicsApplication.class);
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		int res = binarySearch.binarySearch(new int[]{12, 4, 6}, 3);
 
